@@ -1,0 +1,65 @@
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.top .form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px; 
+}
+
+.top .choose {
+  display: inline-block;
+  background: linear-gradient(135deg, #460083, #47008f); 
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top #file-upload {
+  display: none; 
+}
+
+.top .textArea {
+  color: #ffffff; 
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  margin-left: 10px;
+}
+
+.top .upload {
+  display: inline-block;
+  background: linear-gradient(135deg, #460083, #47008f); 
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top .upload:hover {
+  background: linear-gradient(135deg, #c084fc, #d8b4f8); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.top .upload:disabled {
+  background: #e6e6e6; 
+  color: #999999; 
+  cursor: not-allowed;
+  box-shadow: none;
+}

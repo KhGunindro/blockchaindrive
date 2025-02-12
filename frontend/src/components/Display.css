@@ -1,0 +1,132 @@
+/* Overall container for the display */
+.table-container {
+  width: 100%;
+  margin: 20px auto;
+  overflow-x: auto;
+  background-color: #838383; /* Light background for table container */
+  padding: 20px;
+  border-style: solid;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Button styles */
+.center.button {
+  padding: 10px 20px;
+  background-color: #2a2a72;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.center.button:hover,
+.center.button:focus {
+  background-color: #1e1e57;
+  transform: translateY(-2px);
+}
+
+.center.button:active {
+  background-color: #151545;
+  transform: translateY(0);
+}
+
+/* Input field for address */
+.address {
+  display: block;
+  margin: 20px auto;
+  height: 30px;
+  width: 330px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.input[type="text"]:focus {
+  background-color: lightblue;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+/* Table header styling */
+thead {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border-bottom: 3px solid #000000;
+}
+
+th {
+  padding: 15px;
+  font-weight: 600;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Table row styling */
+tr {
+  transition: background-color 0.3s ease;
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+/* Table cell styling */
+td {
+  padding: 12px 20px;
+  text-align: left;
+  color: #333333;
+  font-size: 14px;
+}
+
+/* Link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2a2a72; /* Link color when hovered */
+}
+
+/* Image styling */
+.image-list {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-list:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Add borders around image cells */
+td img {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}

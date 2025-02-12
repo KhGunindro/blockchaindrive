@@ -1,0 +1,120 @@
+/* Navbar container */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #f0f4f8; /* Subtle background color */
+    font-family: 'Arial', sans-serif;
+    z-index: 1000; /* Ensure the navbar stays on top of other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar container for layout */
+.navbar__container {
+    display: flex;
+    justify-content: space-between; /* Space between logo & wallet section */
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 3rem; 
+}
+
+/* Logo section */
+.navbar__logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+}
+
+/* Logo styling */
+.navbar__logo-container img {
+    width: 40px; /* Adjusted logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Navbar text (logo name) */
+.navbar__logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px; /* Adding a bit of space between letters for clarity */
+}
+
+/* Links section (navbar items) */
+.navbar__links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+/* Links styling */
+.navbar__links li {
+    font-size: 1rem;
+}
+
+/* Navbar link styles */
+.navbar__links a {
+    text-decoration: none;
+    font-weight: bold; /* Bold font weight */
+    color: #555;
+    position: relative; /* Set up relative positioning for the pseudo-element */
+    transition: color 0.3s ease;
+}
+
+/* Add underline effect when hovering over links */
+.navbar__links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Position the underline just below the text */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff; /* Blue underline color */
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+/* On hover, expand the underline */
+.navbar__links a:hover::after {
+    width: 100%; /* Full width of the link */
+}
+
+/* Change link color on hover */
+.navbar__links a:hover {
+    color: #007bff;
+}
+
+/* Wallet section (address) */
+.navbar__wallet {
+    display: flex;
+    align-items: center;
+}
+
+/* Wallet address styling */
+.navbar__address {
+    background-color: #ffa2ff; /* Slightly different shade for wallet */
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 600; /* Make address text slightly bolder */
+}
+
+/* Button styling */
+.navbar__button {
+    background-color: #28a745; /* Green button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar__button:hover {
+    background-color: #218838; /* Darker green on hover */
+}

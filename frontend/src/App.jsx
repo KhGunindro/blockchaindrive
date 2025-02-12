@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react';
 import { ethers } from "ethers";
 import Upload from './artifacts/contracts/Upload.sol/Upload.json';
-import { Web3Provider } from "@ethersproject/providers"; // Optional, but not used directly
-
+import { Web3Provider } from "@ethersproject/providers";
+import FileUpload from './components/FileUpload';
+import Display from './components/Display';
+import Modal from './components/Modal';
+import Navbar from './components/Navbar';
+import ethlogo from "./assets/ethlogo.svg";
+import { FaShare } from "react-icons/fa";
 import './App.css';
 
 function App() {
     const [account, setAccount] = useState('');
     const [contract, setContract] = useState(null);
     const [provider, setProvider] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         const wallet = async () => {
@@ -25,7 +31,7 @@ function App() {
 
                 setAccount(address);
 
-                const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
+                const contractAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa3";
                 const contract = new ethers.Contract(contractAddress, Upload.abi, signer);
                 setContract(contract);
                 setProvider(provider);
@@ -40,15 +46,40 @@ function App() {
 
         wallet();
     }, []);
+    const connectWallet = async () => {
+      if (window.ethereum) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        const signer = provider.getSigner();
+        const address = await signer.getAddress();
+        setAccount(address);
+      } else {
+        alert("MetaMask is not installed.");
+      }
+    };
 
     return (
         <div>
-            <h1>Wallet Connection</h1>
+          <div className="share-container">
+        {!modalOpen && (
+        <button className="share" onClick={() => setModalOpen(true)}>
+          <FaShare /> Share
+        </button>
+      )}
+      {modalOpen && (
+        <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
+      )}</div>
+        <Navbar account={account} connectWallet={connectWallet} />
+        <div>
+            <img src={ethlogo} alt="Logo" className="logo" /><h1>BlockBox</h1>
             {account ? (
                 <p>Connected as: {account}</p>
             ) : (
                 <p>Please connect your MetaMask wallet.</p>
             )}
+        </div>
+        <FileUpload account={account} contract={contract} />
+        <Display account={account} contract={contract} provider={provider} />
         </div>
     );
 }
