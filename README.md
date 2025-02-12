@@ -80,9 +80,9 @@ npx hardhat run scripts/deploy.js --network hardhat
 
 ### 7. Start the Frontend
 ```sh
-cd client
+cd frontend
 npm install
-npm start
+npm run dev
 ```
 
 ## Usage
