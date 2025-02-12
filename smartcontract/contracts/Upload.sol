@@ -28,7 +28,6 @@ contract Upload {
           accessList[msg.sender].push(Access(user,true));  
           previousData[msg.sender][user]=true;  
       }
-    
   }
   function disallow(address user) public{
       ownership[msg.sender][user]=false;
